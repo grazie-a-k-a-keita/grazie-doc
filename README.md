@@ -53,3 +53,9 @@ ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 172.17.0.3      8c77e1d048f3
 ```
+
+### デプロイ手順
+
+```sh
+export GIT_USER=grazie-a-k-a-keita
+```
