@@ -11,12 +11,12 @@ const config: Config = {
   url: "https://grazie-doc.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/",
+  baseUrl: "/grazie-doc/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "grazie", // Usually your GitHub org/user name.
-  projectName: "grazie-doc.github.io", // Usually your repo name.
+  organizationName: "grazie-a-k-a-keita", // Usually your GitHub org/user name.
+  projectName: "grazie-doc", // Usually your repo name.
 
   deploymentBranch: "gh-pages",
   trailingSlash: undefined,
