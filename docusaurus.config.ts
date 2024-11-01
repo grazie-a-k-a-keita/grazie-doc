@@ -1,32 +1,22 @@
 import type * as Preset from "@docusaurus/preset-classic";
 import type { Config } from "@docusaurus/types";
 import { themes as prismThemes } from "prism-react-renderer";
+import { app, githubSettings, urls } from "./app.config";
 
 const config: Config = {
-  title: "My Site",
-  tagline: "Dinosaurs are cool",
+  title: app.title,
+  tagline: app.description,
   favicon: "img/favicon.ico",
 
-  // Set the production url of your site here
   url: "https://grazie-doc.github.io",
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/grazie-doc/",
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: "grazie-a-k-a-keita", // Usually your GitHub org/user name.
-  projectName: "grazie-doc", // Usually your repo name.
-
+  baseUrl: `/${githubSettings.projectName}/`,
+  organizationName: githubSettings.organizationName,
+  projectName: githubSettings.projectName,
   deploymentBranch: "gh-pages",
   trailingSlash: undefined,
-
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: "ja",
     locales: ["ja"],
@@ -38,10 +28,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: "./sidebars.ts",
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          editUrl: urls.githubOfProject,
         },
         blog: {
           showReadingTime: true,
@@ -49,10 +36,6 @@ const config: Config = {
             type: ["rss", "atom"],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
           // Useful options to enforce blogging best practices
           onInlineTags: "warn",
           onInlineAuthors: "warn",
@@ -69,11 +52,8 @@ const config: Config = {
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
     navbar: {
-      title: "GraDoc",
-      logo: {
-        alt: "My Site Logo",
-        src: "img/logo.svg",
-      },
+      title: app.title,
+      logo: { alt: "My Site Logo", src: "img/logo.svg" },
       items: [
         {
           type: "docSidebar",
@@ -82,11 +62,7 @@ const config: Config = {
           label: "Tutorial",
         },
         { to: "/blog", label: "Blog", position: "left" },
-        {
-          href: "https://github.com/facebook/docusaurus",
-          label: "GitHub",
-          position: "right",
-        },
+        { href: urls.githubOfProject, label: "GitHub", position: "right" },
       ],
     },
     footer: {
@@ -94,45 +70,26 @@ const config: Config = {
       links: [
         {
           title: "Docs",
-          items: [
-            {
-              label: "Tutorial",
-              to: "/docs/intro",
-            },
-          ],
+          items: [{ label: "Tutorial", to: "/docs/intro" }],
         },
         {
           title: "Community",
           items: [
-            {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
-            },
-            {
-              label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
-            },
-            {
-              label: "Twitter",
-              href: "https://twitter.com/docusaurus",
-            },
+            { label: "X", href: urls.x },
+            { label: "Zenn", href: urls.zenn },
           ],
         },
         {
           title: "More",
           items: [
-            {
-              label: "Blog",
-              to: "/blog",
-            },
-            {
-              label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
-            },
+            { label: "Blog", to: "/blog" },
+            { label: "GitHub", href: urls.github },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} ${
+        app.title
+      }. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
