@@ -40,7 +40,7 @@ $ GIT_USER=<Your GitHub username> yarn deploy
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
 
-### サーバーが開かない
+### Server won't open
 
 ```
 # /etc/hosts
@@ -54,7 +54,7 @@ ff02::2 ip6-allrouters
 172.17.0.3      8c77e1d048f3
 ```
 
-### デプロイ手順
+### Deployment steps
 
 ```sh
 export GIT_USER=grazie-a-k-a-keita
